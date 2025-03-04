@@ -1,14 +1,16 @@
 extends Node
 
-# 所有的监听事件
+## 所有的监听事件
 var _listeners: Dictionary[String, Array] = {}
 
+## 绑定事件
 func on(event_name: String, listener: Callable) -> EventBus:
 	if not _listeners.has(event_name):
 		_listeners[event_name] = []
 	_listeners[event_name].append(listener)
 	return self
 
+## 解除事件绑定
 func off(event_name: String, listener: Callable) -> EventBus:
 	if not _listeners.has(event_name):
 		return
@@ -17,6 +19,8 @@ func off(event_name: String, listener: Callable) -> EventBus:
 		_listeners.erase(event_name)
 	return self
 
+## 发送事件
+## args是传递给监听事件的参数数组
 func emit(event_name: String, args: Array) -> EventBus:
 	if not _listeners.has(event_name):
 		return
