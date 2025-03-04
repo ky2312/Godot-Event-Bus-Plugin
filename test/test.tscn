@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpsvacpcp2sdu"]
+
+[ext_resource type="Script" uid="uid://dfwdn1e6iynui" path="res://test/label_2.gd" id="1_8a8pi"]
+[ext_resource type="Script" uid="uid://mtkn1pyhi376" path="res://test/button.gd" id="1_syuel"]
+
+[node name="Test" type="Node2D"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 211.0
+offset_bottom = 107.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "当前："
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+script = ExtResource("1_8a8pi")
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "点击+2"
+script = ExtResource("1_syuel")
