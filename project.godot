@@ -1,0 +1,15 @@
+config_version=5
+
+[application]
+
+config/name="Godot-Event-Bus-Plugin"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+EventBus="*res://addons/event-bus-plugin/event-bus.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/event-bus-plugin/plugin.cfg")
