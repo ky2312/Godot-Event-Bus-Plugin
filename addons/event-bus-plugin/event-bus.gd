@@ -4,26 +4,24 @@ extends Node
 var _listeners: Dictionary[String, Array] = {}
 
 ## 绑定事件
-func on(event_name: String, listener: Callable) -> EventBus:
+func on(event_name: String, listener: Callable):
 	if not _listeners.has(event_name):
 		_listeners[event_name] = []
 	_listeners[event_name].append(listener)
 	print("The event has been bound. event: %s, listener: %s" % [event_name, listener.get_method()])
-	return self
 
 ## 解除事件绑定
-func off(event_name: String, listener: Callable) -> EventBus:
+func off(event_name: String, listener: Callable):
 	if not _listeners.has(event_name):
 		return
 	_listeners[event_name].erase(listener)
 	if _listeners[event_name].is_empty():
 		_listeners.erase(event_name)
 	print("The event has been unbound. event: %s, listener: %s" % [event_name, listener.get_method()])
-	return self
 
 ## 发送事件 传递参数
 ## args是传递给监听事件的参数数组
-func emitv(event_name: String, arg) -> EventBus:
+func emitv(event_name: String, arg):
 	if not _listeners.has(event_name):
 		print("The sent event does not exist. event: %s" % [event_name])
 		return
@@ -39,8 +37,7 @@ func emitv(event_name: String, arg) -> EventBus:
 			push_error("There are some parameters missing in the sent event. event: %s" % [event_name])
 		else:
 			c.call()
-	return self
 
 ## 发送事件 不传递参数
-func emit(event_name: String) -> EventBus:
-	return self.emitv(event_name, null)
+func emit(event_name: String):
+	self.emitv(event_name, null)
