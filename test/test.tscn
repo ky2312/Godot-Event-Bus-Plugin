@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpsvacpcp2sdu"]
+[gd_scene load_steps=4 format=3 uid="uid://bpsvacpcp2sdu"]
 
 [ext_resource type="Script" uid="uid://dfwdn1e6iynui" path="res://test/label_2.gd" id="1_8a8pi"]
 [ext_resource type="Script" uid="uid://mtkn1pyhi376" path="res://test/button.gd" id="1_syuel"]
+[ext_resource type="Script" uid="uid://bcogv23ypwn8w" path="res://test/button_2.gd" id="3_65205"]
 
 [node name="Test" type="Node2D"]
 
@@ -29,3 +30,9 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "点击+2"
 script = ExtResource("1_syuel")
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "解除事件绑定"
+script = ExtResource("3_65205")

@@ -34,9 +34,9 @@ res://addons/event-bus-plugin/
 要发出事件，请调用EventBus单例的emit方法，并提供事件名称和任何参数：
 
 ```
-EventBus.emit("add_num", [2])
+EventBus.emitv("add_num", 2)
 # 如果不需要参数：
-# EventBus.emit("add_num", [])
+# EventBus.emit("add_num")
 ```
 
 ### 订阅事件
